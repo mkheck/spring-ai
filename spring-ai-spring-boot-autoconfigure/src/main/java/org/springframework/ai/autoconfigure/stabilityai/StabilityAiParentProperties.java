@@ -1,5 +1,5 @@
 /*
- * Copyright 2024-2024 the original author or authors.
+ * Copyright 2023 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,29 +14,34 @@
  * limitations under the License.
  */
 
-package org.springframework.ai.autoconfigure.common.function;
-
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-import org.springframework.context.annotation.Bean;
+package org.springframework.ai.autoconfigure.stabilityai;
 
 /**
- * An annotation used to define functions for use in
+ * Internal parent properties for the StabilityAI properties.
  *
- * @author Christopher Smith
+ * @author Mark Pollack
+ * @since 0.8.0
  */
-@Bean
-@Target(ElementType.METHOD)
-@Retention(RetentionPolicy.RUNTIME)
-public @interface SpringAiFunction {
+class StabilityAiParentProperties {
 
-	String name();
+	private String apiKey;
 
-	String description();
+	private String baseUrl;
 
-	Class<?> classType();
+	public String getApiKey() {
+		return apiKey;
+	}
+
+	public void setApiKey(String apiKey) {
+		this.apiKey = apiKey;
+	}
+
+	public String getBaseUrl() {
+		return baseUrl;
+	}
+
+	public void setBaseUrl(String baseUrl) {
+		this.baseUrl = baseUrl;
+	}
 
 }

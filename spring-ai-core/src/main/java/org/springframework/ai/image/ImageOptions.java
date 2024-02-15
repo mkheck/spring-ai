@@ -18,6 +18,10 @@ package org.springframework.ai.image;
 
 import org.springframework.ai.model.ModelOptions;
 
+/**
+ * ImageOptions represent the common options, portable across different image generation
+ * models.
+ */
 public interface ImageOptions extends ModelOptions {
 
 	Integer getN();
